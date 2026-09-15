@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main()
+{
+    int l, m;
+    int u, v;
+    int tree[10001] = {0};
+    int i;
+    int remain = 0;
+    scanf("%d %d", &l, &m);
+
+    for (i = 0; i < m; i++)
+    {
+        scanf("%d %d", &u, &v);
+        for (int j = u; j <= v; j++)
+        {
+            tree[j] = 1;
+        }
+    }
+
+    for (i = 0; i <= l; i++)
+    {
+        if (tree[i] == 0)
+        {
+            remain++;
+        }
+    }
+
+    printf("%d\n", remain);
+
+    return 0;
+}
